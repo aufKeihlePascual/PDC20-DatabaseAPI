@@ -3,6 +3,7 @@ import { Route, Routes, Link }  from "react-router-dom";
 
 import BasicForms from "./BasicForms";
 import ControlledInput from "./ControlledInput";
+import UncontrolledInput from "./UncontrolledInput";
 
 const MyMainForms = () => {
     return (
@@ -12,11 +13,13 @@ const MyMainForms = () => {
                 <ul>
                     <li><Link to="basic-form">Basic Form</Link></li>
                     <li><Link to="controlled-input">Controlled Input</Link></li>
+                    <li><Link to="uncontrolled-input">Uncontrolled Input</Link></li>
                 </ul>
             </nav>
             <Routes>
                 <Route path="basic-form" element={ <BasicForms/> } />
                 <Route path="controlled-input" element={ <ControlledInput /> } />
+                <Route path="uncontrolled-input" element={ <UncontrolledInput /> } />
             </Routes>
 
         </div>
