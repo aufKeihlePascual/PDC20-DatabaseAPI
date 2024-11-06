@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+// This is a good example for validating if a user's email fits the requirements
+
 const ControlledInput = () => {
     const [email, setEmail] = useState('');
   
