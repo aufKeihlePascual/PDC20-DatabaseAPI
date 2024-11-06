@@ -23,6 +23,7 @@ const Nav = () => {
                         <NavLink to="/profile" className="nav-link" activeClassName="active" aria-current="page">Profile</NavLink>
                         <NavLink to="/contact" className="nav-link" activeClassName="active" aria-current="page">Contact Us</NavLink>
                         <NavLink to="/about" className="nav-link" activeClassName="active" aria-current="page">About Us</NavLink>
+                        <NavLink to="/mymainforms" className="nav-link" activeClassName="active" aria-current="page">My Main Forms</NavLink>
                     </div>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
