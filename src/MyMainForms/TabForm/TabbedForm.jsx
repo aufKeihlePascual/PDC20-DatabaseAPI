@@ -13,7 +13,8 @@ const TabbedForm = () => {
         username: '',
         password: '',
     });
-    
+
+    // Handle tab change
     const handleTabChange = (tab) => {
         setActiveTab(tab);
     };
@@ -26,6 +27,12 @@ const TabbedForm = () => {
         }));
     };
 
+    // Check if all required fields are filled
+    const isFormValid = () => {
+        return Object.values(formData).every((value) => value.trim() !== '');
+    };
+
+    // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`Submitted Data: ${JSON.stringify(formData, null, 2)}`);
@@ -59,7 +66,17 @@ const TabbedForm = () => {
                     formData={formData}
                     onChange={handleChange}
                 />
-                <button type="submit" style={styles.submitButton}>Submit</button>
+                <button 
+                    type="submit" 
+                    style={{
+                        ...styles.submitButton,
+                        backgroundColor: isFormValid() ? '#007BFF' : '#d6d6d6', // Blue when enabled, grey when disabled
+                        cursor: isFormValid() ? 'pointer' : 'not-allowed', // Pointer cursor when enabled, not-allowed when disabled
+                    }} 
+                    disabled={!isFormValid()} // Disable button if form is invalid
+                >
+                    Submit
+                </button>
             </form>
         </div>
     );
@@ -93,11 +110,9 @@ const styles = {
     },
     submitButton: {
         padding: '10px 15px',
-        backgroundColor: '#007BFF',
         color: '#fff',
         border: 'none',
         borderRadius: '4px',
-        cursor: 'pointer',
         fontSize: '16px',
         transition: 'background-color 0.3s ease',
     },
