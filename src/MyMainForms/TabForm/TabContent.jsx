@@ -5,29 +5,43 @@ import React from "react";
 const TabContent = ({ activeTab, formData, onChange }) => {
   return (
     <div style={styles.container}>
-      {activeTab === "basic" && (
+      {activeTab === "personal" && (
         <div>
-          <h2 style={styles.header}>Basic Information</h2>
+          <h2 style={styles.header}>Personal Information</h2>
           <div style={styles.formGroup}>
             <label style={styles.label}>
-              Name:
+              First Name:
               <input
                 type="text"
-                value={formData.name}
-                onChange={(e) => onChange("name", e.target.value)}
-                placeholder="Enter your name"
+                value={formData.firstname}
+                onChange={(e) => onChange("firstname", e.target.value)}
+                placeholder="Enter your first name"
                 style={styles.input}
               />
             </label>
           </div>
+
           <div style={styles.formGroup}>
             <label style={styles.label}>
-              Age:
+              Last Name:
               <input
                 type="text"
-                value={formData.age}
-                onChange={(e) => onChange("age", e.target.value)}
-                placeholder="Enter your age"
+                value={formData.lastname}
+                onChange={(e) => onChange("lastname", e.target.value)}
+                placeholder="Enter your lastname"
+                style={styles.input}
+              />
+            </label>
+          </div>
+
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Date of Birth:
+              <input
+                type="date"
+                value={formData.dob}
+                onChange={(e) => onChange("dob", e.target.value)}
+                placeholder="Enter your birthdate"
                 style={styles.input}
               />
             </label>
@@ -62,32 +76,130 @@ const TabContent = ({ activeTab, formData, onChange }) => {
               />
             </label>
           </div>
+
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Address:
+              <input
+                type="text"
+                value={formData.address}
+                onChange={(e) => onChange("address", e.target.value)}
+                placeholder="Enter your address"
+                style={styles.input}
+              />
+            </label>
+          </div>
+
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              City:
+              <input
+                type="text"
+                value={formData.city}
+                onChange={(e) => onChange("city", e.target.value)}
+                placeholder="Enter your city"
+                style={styles.input}
+              />
+            </label>
+          </div>
+
         </div>
       )}
 
-      {activeTab === "account" && (
+      {activeTab === "academic" && (
         <div>
-          <h2 style={styles.header}>Account Information</h2>
+          <h2 style={styles.header}>Academic Information</h2>
           <div style={styles.formGroup}>
             <label style={styles.label}>
-              Username:
+              Student ID:
               <input
                 type="text"
-                value={formData.username}
-                onChange={(e) => onChange("username", e.target.value)}
-                placeholder="Enter your username"
+                value={formData.studentId}
+                onChange={(e) => onChange("studentId", e.target.value)}
+                placeholder="Enter your student ID"
+                style={styles.input}
+              />
+            </label>
+          </div>
+
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Program:
+              <input
+                type="text"
+                value={formData.program}
+                onChange={(e) => onChange("program", e.target.value)}
+                placeholder="Enter your program"
+                style={styles.input}
+              />
+            </label>
+          </div>
+          
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Year Level:
+              <input
+                type="text"
+                value={formData.yearLevel}
+                onChange={(e) => onChange("yearLevel", e.target.value)}
+                placeholder="Enter your year level"
+                style={styles.input}
+              />
+            </label>
+          </div>
+
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              GPA:
+              <input
+                type="number"
+                value={formData.gpa}
+                onChange={(e) => onChange("gpa", e.target.value)}
+                placeholder="Enter your GPA"
+                style={styles.input}
+                step="0.1"
+                min="0.0"
+                max="4.0"
+              />
+            </label>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "additional" && (
+        <div>
+          <h2 style={styles.header}>Additional Details</h2>
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Hobbies:
+              <input
+                type="text"
+                value={formData.hobbies}
+                onChange={(e) => onChange("hobbies", e.target.value)}
+                placeholder="Enter your hobbies"
                 style={styles.input}
               />
             </label>
           </div>
           <div style={styles.formGroup}>
             <label style={styles.label}>
-              Password:
+              Skills:
               <input
-                type="password"
-                value={formData.password}
-                onChange={(e) => onChange("password", e.target.value)}
-                placeholder="Enter your password"
+                type="text"
+                value={formData.skills}
+                onChange={(e) => onChange("skills", e.target.value)}
+                placeholder="Enter your skills"
+                style={styles.input}
+              />
+            </label>
+          </div>
+          <div style={styles.formGroup}>
+            <label style={styles.label}>
+              Other Notes:
+              <textarea
+                value={formData.notes}
+                onChange={(e) => onChange("notes", e.target.value)}
+                placeholder="Enter any other notes"
                 style={styles.input}
               />
             </label>

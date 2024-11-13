@@ -5,6 +5,7 @@ import BasicForms from "./BasicForms";
 import ControlledInput from "./ControlledInput";
 import UncontrolledInput from "./UncontrolledInput";
 import TabbedForm from "./TabForm/TabbedForm";
+import RegistrationForm from "../components/RegistrationForm";
 
 const MyMainForms = () => {
     return (
@@ -15,14 +16,14 @@ const MyMainForms = () => {
                     <li><Link to="basic-form">Basic Form</Link></li>
                     <li><Link to="controlled-input">Controlled Input</Link></li>
                     <li><Link to="uncontrolled-input">Uncontrolled Input</Link></li>
-                    <li><Link to="tabbed-form">Tabbed Form</Link></li>
+                    <li><Link to="registration-form">Registration Form</Link></li>
                 </ul>
             </nav>
             <Routes>
                 <Route path="basic-form" element = { <BasicForms/> } />
                 <Route path="controlled-input" element = { <ControlledInput /> } />
                 <Route path="uncontrolled-input" element = { <UncontrolledInput /> } />
-                <Route path="tabbed-form" element = { <TabbedForm /> } />
+                <Route path="registration-form" element = { <RegistrationForm/> } />
             </Routes>
 
         </div>
